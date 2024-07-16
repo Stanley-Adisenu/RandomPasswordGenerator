@@ -9,3 +9,260 @@ body{
   background-color: #18171F ;
   color: white;
 }
+
+#headText{
+  position: absolute;
+  margin-bottom: 30rem;
+  color: #817D92;
+  font-size: 1.1rem;
+}
+
+#card{
+
+  width:28rem;
+  height:27rem;
+  position: relative;
+}
+
+#passSpace{
+  display: flex;
+  justify-content: space-between;
+  background-color: #24232C;
+  padding:  0.7rem 1.5rem;
+  
+}
+
+#passSpace input{
+  width: 65%;
+  background-color: transparent;
+  color: #E6E5EA;
+
+}
+
+#copier{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+#copier p{
+  color: #A4FFAF;
+  margin: 0.35rem;
+  /* display: none; */
+}
+#copier svg{
+  margin: 0.35rem;
+  fill:#A4FFAF; 
+}
+#copier svg:hover{
+  cursor: pointer;
+  fill: #E6E5EA;
+}
+
+
+#downSide{
+  background-color: #24232C;
+  margin-top: 1.3rem;
+  height: 27rem;
+}
+
+#lengthSlide{
+  padding: 0.9rem 1.5rem;
+}
+
+#charLength{
+  display: flex;
+  justify-content: space-between;
+ /* padding: 0.9rem; */
+}
+#charLength #digit{
+  font-size: 1.6rem;
+
+  color: #A4FFAF;
+  margin-top: -0.45rem;
+}
+#charLength #text{
+  font-size: 0.99rem;
+  font-weight: 400;
+
+  color: #E6E5EA;
+  margin-top: 0.22rem;
+}
+
+input[type="range"] {
+  /* appearance: none; */
+	width: 100%;
+  height: 1rem;
+  margin-top: 1.2rem;
+  accent-color: #A4FFAF;
+  background-color: green;
+}
+
+#options{
+  display: flex;
+  padding: 0.9rem 1.5rem;
+  flex-direction: column;
+
+}
+
+#opt input{
+  /* position: absolute; */
+  /* opacity: 0; */
+  cursor: pointer;
+  /* height: 0;
+  width: 0; */
+  
+}
+#opt{
+  margin-bottom: 0.7rem;
+}
+
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #24232C;
+}
+#opt input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.7rem;
+  font-size: 0.9rem;
+  font-weight:bolder;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0.33rem;
+  left: 0;
+  height: 0.9rem;
+  width: 0.9rem;
+  background-color: #18171F;
+  border: 2px solid #E6E5EA;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #18171F;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #A4FFAF;
+  border: 0px ;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 0.25rem;
+  top: 0.02rem;
+  width: 6px;
+  height: 12px;
+  border: solid #18171F;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#strength{
+  padding: 1.2rem;
+  margin: auto 1.5rem ;
+  display: flex;
+  justify-content: space-between;
+  background-color: #18171F;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+#strength p{
+  color:#817D92 ;
+  font-size: 0.99rem;
+}
+.box{
+  width: 0.5rem;
+  height: 1.49rem;
+  margin-top: 0.27rem;
+  margin-left: 0.2rem;
+  border: 2px solid #E6E5EA;
+  background-color: transparent;
+
+}
+#strengthMeter{
+  display: flex;
+
+}
+#indicator{
+  display: flex;
+  margin-left: 0.6rem;
+}
+#generate{
+  margin: 1.5rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  background-color: #A4FFAF;
+  color: #18171F;
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 0.7rem ;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  border: 2px solid #A4FFAF;
+}
+#generate p{
+  margin-right: 0.7rem;
+}
+#generate svg{
+  margin-top: 0.5rem;
+  fill:#24232C;
+}
+
+
+#generate:hover{
+  transform: translateY(-0.4rem);
+  border: 2px solid #A4FFAF;
+  background-color: #24232C;
+  color: #A4FFAF;
+ 
+  svg{
+    fill: #A4FFAF;
+  }
+  
+}
+
+
+
+
+
+
+
+
