@@ -1,4 +1,3 @@
-import React, { ChangeEvent } from 'react'
 type PasswordLengthProps = {
     passwordLength: number
     setPasswordLength: (length:number)=> void
@@ -10,12 +9,14 @@ export default function PasswordLength({passwordLength,setPasswordLength}:Passwo
         setPasswordLength(parseInt(event.target.value,10) )
     }
   return (
-    <div className='mb-2'>
-        <label className='flex-items-center justify-between font-medium' >
-            <div>Password length </div>
-            <div className='text-2xl'>{passwordLength} </div>
-        </label>
-        <input type="range" name="" id="passwordLength" min="4" max="20" value={passwordLength} className='w-full appearance-none h-1' onChange={handlePasswordLengthChange}/>
+    <div id='lengthSlide'>
+    <div id='charLength'>
+      <p id='text'>Character Length</p>
+      <p id='digit'>{passwordLength}</p>
     </div>
+    <div>
+      <input className='range' type="range" min="4" max="20"  value={passwordLength} onChange={handlePasswordLengthChange}/>
+    </div>
+  </div>
   )
 }

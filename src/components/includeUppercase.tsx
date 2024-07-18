@@ -1,7 +1,18 @@
-import React from 'react'
 
-export default function includeUppercase() {
+type IncludeUpperCaseProps = {
+  includeUpperCase:boolean;
+  setIncludeUpperCase:(include:boolean)=>void;
+}
+
+export default function IncludeUppercase({includeUpperCase,setIncludeUpperCase}:IncludeUpperCaseProps) {
+  function handleIncludeUppercaseChange(event: ChangeEvent<HTMLInputElement>){
+    setIncludeUpperCase(!includeUpperCase)
+}
+
   return (
-    <div>includeUppercase</div>
+    <label className="container"><span className='optionText'>Include Uppercase Letters</span>
+    <input type="checkbox" id='includeUppercase' checked={includeUpperCase} onChange={handleIncludeUppercaseChange}/>
+    <span className="checkmark"></span>
+    </label> 
   )
 }
