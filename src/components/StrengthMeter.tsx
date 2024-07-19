@@ -1,11 +1,22 @@
 type StrengthMeterProps = {
     strength: string | null
-    setStrength: (length:string)=> void
 }
 
-export default function StrengthMeter({strength,setStrength}:StrengthMeterProps) {
+export default function StrengthMeter({strength}:StrengthMeterProps) {
     switch (strength) {
-        case 'VERY WEAK!':
+        case '':
+            return (
+                <div id='strengthMeter'>
+                    <h6 id='safety'>{strength}</h6>
+                    <div id='indicator'>
+                    <div className="box" ></div>
+                    <div className="box" ></div>
+                    <div className="box" ></div>
+                    <div className="box" ></div>
+                    </div>  
+                  </div>
+              );
+        case 'TOO WEAK!':
           return (
             <div id='strengthMeter'>
             <h6 id='safety'>{strength}</h6>
@@ -55,7 +66,17 @@ export default function StrengthMeter({strength,setStrength}:StrengthMeterProps)
           );
        
         default:
-          return null;
+            return (
+                <div id='strengthMeter'>
+                    <h6 id='safety'>{strength}</h6>
+                    <div id='indicator'>
+                    <div className="box" ></div>
+                    <div className="box" ></div>
+                    <div className="box" ></div>
+                    <div className="box" ></div>
+                    </div>  
+                  </div>
+              );
       }
   
 }

@@ -14,8 +14,9 @@ export default function PasswordLength({passwordLength,setPasswordLength}:Passwo
       <p id='text'>Character Length</p>
       <p id='digit'>{passwordLength}</p>
     </div>
-    <div>
-      <input className='range' type="range" min="4" max="20"  value={passwordLength} onChange={handlePasswordLengthChange}/>
+    <div  >
+      <div className='range'></div>
+      <input className='range' type="range" min="0" max="20"  value={passwordLength} onChange={handlePasswordLengthChange}/>
     </div>
   </div>
   )

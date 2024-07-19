@@ -12,14 +12,14 @@ import StrengthMeter from './components/StrengthMeter'
 
 function App() {
   const [password,setPassword] = useState<string | null>(null)
-  const [passwordLength, setPasswordLength] =  useState<number>(4)
-  const [includeUpperCase, setIncludeUppercase] = useState<boolean>(true)
+  const [passwordLength, setPasswordLength] =  useState<number>(0)
+  const [includeUpperCase, setIncludeUppercase] = useState<boolean>(false)
   const [includeLowerCase, setIncludeLowercase] = useState<boolean>(false)
   const [includeNumbers, setincludeNumbers] = useState<boolean>(false)
   const [includeSymbols, setincludeSymbols] = useState<boolean>(false)
   const [copied,setCopied] = useState<boolean>(false)
 
-  const [strength,setStrength]  = useState<string | null>('VERY WEAK!')
+  const [strength,setStrength]  = useState<string | null>('')
   
   
   function handleGeneratePassword(){
@@ -35,27 +35,38 @@ function App() {
 
   const handleCopyClick = () => {
 
+    if (password){
+      navigator.clipboard.writeText(password)
+      setCopied(true);
+      setTimeout(() => {
+        setCopied(false);
+      }, 2000);
+      return
+    }
+    else{
+      setCopied(false)
+    }
 
-    navigator.clipboard.writeText(password)
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-    }, 2000);
+    
   }
 
 
 const handleStrength = ()=>{
   let lvl: number = 0;
-  if (passwordLength >= 8)lvl++;
-  if(includeUpperCase)lvl++
-  if(includeLowerCase)lvl++
-  if(includeNumbers)lvl++
-  if(includeSymbols)lvl++
+  if (passwordLength>0  )lvl++;
+  if(passwordLength>=8 && includeUpperCase)lvl++
+  if(passwordLength>=8 && includeLowerCase)lvl++
+  if(passwordLength>=8 && includeNumbers)lvl++
+  if(passwordLength>=8 && includeSymbols)lvl++
+  if (!includeLowerCase && !includeNumbers && !includeNumbers && !includeSymbols && passwordLength>0 &&!includeUpperCase) lvl = 0;
 
   switch(lvl){
+    case 0:
+      setStrength('');
+      return '';
     case 1:
-      setStrength('VERY WEAK!');
-      return 'VERY WEAK!';
+      setStrength('TOO WEAK!');
+      return 'TOO WEAK!';
     case 2:
       setStrength('WEAK');
       return 'WEAK';
@@ -74,23 +85,11 @@ const handleStrength = ()=>{
   }
   
 
-  alert(lvl)
 
 
 }
  
-  // const handleStrength = ()=>{
-  //   const safety: string | null = document.getElementById('safety').textContent;
-    
-  //   if(includeUpperCase==true && includeLowerCase==false && includeNumbers==false && includeSymbols==false){
-  //     setStrength('WEAKEST')
-  //   }
-     
 
-  //   // alert(safety)
-
-
-  // }
 
  
   return (
@@ -114,15 +113,7 @@ const handleStrength = ()=>{
 
         <PasswordLength passwordLength={passwordLength} setPasswordLength={setPasswordLength}/>
       
-        {/* <div id='lengthSlide'>
-          <div id='charLength'>
-            <p id='text'>Character Length</p>
-            <p id='digit'>10</p>
-          </div>
-          <div>
-            <input className='range' type="range" min="4" max="12" />
-          </div>
-        </div> */}
+
 
         <div id='options'>
 
@@ -134,22 +125,7 @@ const handleStrength = ()=>{
 
           <IncludeSymbols includeSymbols={includeSymbols} setIncludeSymbols={setincludeSymbols}/>
 
-          {/* <label className="container"><span className='optionText'>Include Uppercase Letters</span>
-          <input type="checkbox" checked="checked"/>
-          <span className="checkmark"></span>
-          </label> */}
-          {/* <label className="container"><span className='optionText'>Include Lowercase Letters</span>
-          <input type="checkbox" />
-          <span className="checkmark"></span>
-          </label> */}
-          {/* <label className="container"><span className='optionText'>Include Numbers</span>
-          <input type="checkbox" />
-          <span className="checkmark"></span>
-          </label> */}
-          {/* <label className="container"><span className='optionText'>Include Symbols</span>
-          <input type="checkbox" />
-          <span className="checkmark"></span>
-          </label> */}
+
        
        
         </div>
@@ -159,17 +135,8 @@ const handleStrength = ()=>{
             <div id='strength'>
               <p>STRENGTH</p>
 
-              <StrengthMeter strength={strength} setStrength={setStrength}/>
-{/* 
-              <div id='strengthMeter'>
-                <h6 id='safety'>{strength}</h6>
-                <div id='indicator'>
-                <div className="box" style={{backgroundColor:'#F8CD65'}}></div>
-                <div className="box" style={{backgroundColor:'#F8CD65'}}></div>
-                <div className="box" style={{backgroundColor:'#F8CD65'}}></div>
-                <div className="box"></div>
-                </div>  
-              </div> */}
+              <StrengthMeter strength={strength} />
+
 
             </div>
           </div>
@@ -185,13 +152,6 @@ const handleStrength = ()=>{
 
           </div>
 
-
-
-        {/* <div className='w-[20rem] bg-gray p-4'>
-
-          <PasswordLength passwordLength={passwordLength} setPasswordLength={setPasswordLength}/>
-          
-        </div>  */}
       </div>
 
     </>
