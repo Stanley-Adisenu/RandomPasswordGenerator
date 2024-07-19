@@ -11,7 +11,7 @@ import StrengthMeter from './components/StrengthMeter'
 
 
 function App() {
-  const [password,setPassword] = useState<string | null>(null)
+  const [password,setPassword] = useState<string >('')
   const [passwordLength, setPasswordLength] =  useState<number>(0)
   const [includeUpperCase, setIncludeUppercase] = useState<boolean>(false)
   const [includeLowerCase, setIncludeLowercase] = useState<boolean>(false)
