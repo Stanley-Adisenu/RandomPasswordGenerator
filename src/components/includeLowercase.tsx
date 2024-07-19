@@ -5,7 +5,7 @@ type IncludeLowerCaseProps = {
 }
 
 export default function IncludeUppercase({includeLowerCase,setIncludeLowerCase}:IncludeLowerCaseProps) {
-  function handleIncludeLowercaseChange(event: ChangeEvent<HTMLInputElement>){
+  function handleIncludeLowercaseChange(){
     setIncludeLowerCase(!includeLowerCase)
 }
 

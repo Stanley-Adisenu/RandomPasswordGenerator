@@ -5,7 +5,7 @@ type IncludeNumbersProps = {
 }
 
 export default function IncludeNumbers({includeNumbers,setIncludeNumbers}:IncludeNumbersProps) {
-  function handleIncludeNumbersChange(event: ChangeEvent<HTMLInputElement>){
+  function handleIncludeNumbersChange(){
     setIncludeNumbers(!includeNumbers)
 }
 

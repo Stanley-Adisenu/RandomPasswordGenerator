@@ -5,7 +5,7 @@ type IncludeSymbolsProps = {
 }
 
 export default function IncludeSymbols({includeSymbols,setIncludeSymbols}:IncludeSymbolsProps) {
-  function handleIncludeSymbolsChange(event: ChangeEvent<HTMLInputElement>){
+  function handleIncludeSymbolsChange(){
     setIncludeSymbols(!includeSymbols)
 }
 

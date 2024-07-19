@@ -5,7 +5,7 @@ type PasswordLengthProps = {
 
 export default function PasswordLength({passwordLength,setPasswordLength}:PasswordLengthProps) {
 
-    function handlePasswordLengthChange(event: ChangeEvent<HTMLInputElement>){
+    function handlePasswordLengthChange(event: any){
         setPasswordLength(parseInt(event.target.value,10) )
     }
   return (

@@ -5,7 +5,7 @@ type IncludeUpperCaseProps = {
 }
 
 export default function IncludeUppercase({includeUpperCase,setIncludeUpperCase}:IncludeUpperCaseProps) {
-  function handleIncludeUppercaseChange(event: ChangeEvent<HTMLInputElement>){
+  function handleIncludeUppercaseChange(){
     setIncludeUpperCase(!includeUpperCase)
 }
 
