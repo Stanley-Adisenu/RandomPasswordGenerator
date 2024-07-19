@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import './index.css'
-import PasswordLength from './components/PasswordLength'
+import PasswordLength from './components/PasswordLength';
 
-import IncludeUppercase from './components/IncludeUppercase.tsx'
-import IncludeLowercase from './components/IncludeLowercase'
-import IncludeNumbers from './components/IncludeNumbers'
-import IncludeSymbols from './components/IncludeSymbols'
-import { generatePassword } from './utils/generatePassword'
-import StrengthMeter from './components/StrengthMeter'
+import IncludeUppercase from './components/IncludeUppercase';
+import IncludeLowercase from './components/IncludeLowercase';
+import IncludeNumbers from './components/IncludeNumbers';
+import IncludeSymbols from './components/IncludeSymbols';
+import { generatePassword } from './utils/generatePassword';
+import StrengthMeter from './components/StrengthMeter';
 
 
 function App() {
