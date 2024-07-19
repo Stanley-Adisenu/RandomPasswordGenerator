@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './index.css'
 import PasswordLength from './components/PasswordLength'
 
-import IncludeUppercase from './components/IncludeUppercase'
+import IncludeUppercase from './components/IncludeUppercase.tsx'
 import IncludeLowercase from './components/IncludeLowercase'
 import IncludeNumbers from './components/IncludeNumbers'
 import IncludeSymbols from './components/IncludeSymbols'
