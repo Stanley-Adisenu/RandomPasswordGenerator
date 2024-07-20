@@ -59,6 +59,7 @@ const handleStrength = ()=>{
   if(passwordLength>=8 && includeNumbers)lvl++
   if(passwordLength>=8 && includeSymbols)lvl++
   if (!includeLowerCase && !includeNumbers && !includeNumbers && !includeSymbols && passwordLength>0 &&!includeUpperCase) lvl = 0;
+  if (includeLowerCase && includeNumbers && includeNumbers && includeSymbols && passwordLength>=5 && passwordLength<8 &&includeUpperCase) lvl = 4;
 
   switch(lvl){
     case 0:
